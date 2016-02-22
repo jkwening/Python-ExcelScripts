@@ -59,6 +59,7 @@ class ExcelScript:
         sheet_names = xl.open_workbook(file_name).sheet_names()
 
         # combine sheets into one data frame
+        f_name = os.path.basename(file_name)
         print "\nCOMBINING SHEETS..."
         if final_data is None:  # initialize data frame if it doesn't exist yet
             final_data = pd.DataFrame()
@@ -67,6 +68,7 @@ class ExcelScript:
             df = pd.read_excel(file_name, name)
             # add new coln for form name
             df["Sheet Name"] = name
+            df["File Name"] = f_name
             final_data = final_data.append(df, ignore_index=True)
 
         print "DONE!"
@@ -145,6 +147,8 @@ class ExcelScript:
         except ValueError:
             print "\nSave Canceled...Sending back to MAIN SCREEN"
             self.prompt()
+
+        print "\nSaved Successfully at: " + file_path
         return
 
 
