@@ -1,0 +1,16 @@
+ExcelCombineTool.py is a user friendly script for Excel files that allows for the user to combine:
+
+1. files with multiple sheets into a new Excel file with only one sheet
+    - a new column is added that denotes the sheet name it was pulled from
+2. multiple Excel file into a new Excel file with only one sheet
+    - currently the first sheet of each Excel file is combined
+    - working on option for dictating which sheet for each file to combine
+
+Note:   dialog box is used by user to select files to combine and where to save combined file.
+        The dialog box may not pop up as the main window, so you may have to
+        minimize some windows to find it. Will work on making that the focus.
+
+Requirements:
+This script runs using Python 2.7+ version
+To use the script, you will need the following modules:
+- pandas module: installing this module is dependent on numpy and xlrd module
